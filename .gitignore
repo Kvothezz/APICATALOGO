@@ -1,0 +1,15 @@
+# Ignore o diretório bin
+bin/
+# Ignore o diretório obj
+obj/
+# Ignore pacotes do NuGet
+packages/
+# Ignore arquivos de log
+*.log
+# Ignore arquivos de configuração de usuário
+*.user
+*.userosscache
+*.suo
+# Ignore arquivos de build
+*.build.cs
+.vs
