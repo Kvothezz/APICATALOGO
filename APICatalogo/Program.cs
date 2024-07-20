@@ -14,7 +14,7 @@ builder.Services.AddSwaggerGen();
 builder.Configuration.AddEnvironmentVariables();
 
 //String de conexão
-string? mySqlConnection = builder.Configuration.GetValue<string>("DefaultConnection");
+string mySqlConnection = builder.Configuration.GetConnectionString("DefaultConnection");
 
 // Verifica se a string de conexão foi encontrada
 if (string.IsNullOrEmpty(mySqlConnection))

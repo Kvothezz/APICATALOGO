@@ -8,8 +8,8 @@ namespace APICatalogo.Context
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) 
         {
         }
-        DbSet<Categoria>? Categorias { get; set; }
-        DbSet<Produto>? Produtos { get; set; }
+        public DbSet<Categoria>? Categorias { get; set; }
+        public DbSet<Produto>? Produtos { get; set; }
 
     }
 }

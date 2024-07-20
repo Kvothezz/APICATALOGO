@@ -13,3 +13,5 @@ packages/
 # Ignore arquivos de build
 *.build.cs
 .vs
+appsettings.Development.json
+/APICatalogo/appsettings.Development.json
