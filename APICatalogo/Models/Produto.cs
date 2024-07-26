@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace APICatalogo.Models;
 
@@ -28,6 +29,8 @@ public class Produto
     public DateTime DataCadastro { get; set; }
 
     public int CategoriaId { get; set; } // Foreign key
+
+    [JsonIgnore] // ajuda com o problema de sempre aparecer na serialização/desserialização
     public Categoria? Categoria { get; set; } // propriedade de navegação para definir que produto tá mapeado para categoria e cada categoria pode ter uma coleção de produto
 
 }

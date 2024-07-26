@@ -21,7 +21,7 @@ namespace APICatalogo.Controllers
         public ActionResult<IEnumerable<Produto>> Get() // Antes só com o IEnumerable ele n poderia retornar o NotFound.
                                                         // Somente a lista de produtos. Mas aplicando o ActionResult pode retornar os 2
         {
-            var produtos = _context.Produtos.ToList(); // vai no contexto,pega a tabela produtos e lista
+            var produtos = _context.Produtos.AsNoTracking().ToList(); // vai no contexto,pega a tabela produtos e lista
             
             if(produtos is null)
             {
@@ -33,7 +33,7 @@ namespace APICatalogo.Controllers
         [HttpGet("{id:int}", Name ="ObterProduto")]
         public ActionResult<Produto> Get(int id)
         {
-            var produto = _context.Produtos.FirstOrDefault(p => p.Id == id);
+            var produto = _context.Produtos.AsNoTracking().FirstOrDefault(p => p.Id == id);
 
             if(produto is null)
             {
